@@ -21,13 +21,18 @@
 
 package com.adyen.model.checkout;
 
+import com.adyen.model.checkout.paymentMethodDetails.GenericPaymentMethodDetails;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Objects;
 
-public class DefaultPaymentMethodDetails implements PaymentMethodDetails {
-    @SerializedName("type")
-    private String type;
+/**
+ * @deprecated Use the paymentMethod from the checkout paymentMethodDetails package
+ * if no input details are needed and there is no paymentMethodDetail available
+ * use the {@link com.adyen.model.checkout.paymentMethodDetails.GenericPaymentMethodDetails} class
+ */
+@Deprecated
+public class DefaultPaymentMethodDetails extends GenericPaymentMethodDetails {
     @SerializedName("number")
     private String number;
     @SerializedName("expiryMonth")
@@ -78,16 +83,6 @@ public class DefaultPaymentMethodDetails implements PaymentMethodDetails {
     private String googlepayToken;
     @SerializedName("separateDeliveryAddress")
     private Boolean separateDeliveryAddress;
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public DefaultPaymentMethodDetails type(String type) {
         this.type = type;

@@ -36,6 +36,7 @@ import com.adyen.model.checkout.PaymentSessionResponse;
 import com.adyen.model.checkout.PaymentsDetailsRequest;
 import com.adyen.model.checkout.PaymentsRequest;
 import com.adyen.model.checkout.PaymentsResponse;
+import com.adyen.model.checkout.paymentMethodDetails.SepaDirectDebitDetails;
 import com.adyen.service.Checkout;
 import com.adyen.service.exception.ApiException;
 import com.google.gson.annotations.SerializedName;
@@ -253,12 +254,12 @@ public class CheckoutTest extends BaseTest {
                 + "  },\n"
                 + "  \"merchantAccount\": \"MagentoMerchantTest\",\n"
                 + "  \"paymentMethod\": {\n"
-                + "    \"type\": \"scheme\",\n"
                 + "    \"number\": \"4111111111111111\",\n"
                 + "    \"expiryMonth\": \"10\",\n"
                 + "    \"expiryYear\": \"2018\",\n"
                 + "    \"holderName\": \"John Smith\",\n"
-                + "    \"cvc\": \"737\"\n"
+                + "    \"cvc\": \"737\",\n"
+                + "    \"type\": \"scheme\"\n"
                 + "  },\n"
                 + "  \"reference\": \"Your order number\",\n"
                 + "  \"returnUrl\": \"https://your-company.com/...\",\n"
@@ -316,13 +317,12 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     public void TestSepaPaymentMethodDetails() {
-        DefaultPaymentMethodDetails defaultPaymentMethodDetails = new DefaultPaymentMethodDetails();
-        defaultPaymentMethodDetails.type("sepadirectdebit");
-        defaultPaymentMethodDetails.setSepaOwnerName("A. Schneider");
-        defaultPaymentMethodDetails.setSepaIbanNumber("DE87123456781234567890");
-
+        SepaDirectDebitDetails sepaDirectDebitDetails = new SepaDirectDebitDetails();
+        sepaDirectDebitDetails.setOwnerName("A. Schneider");
+        sepaDirectDebitDetails.setIban("DE87123456781234567890");
+        
         PaymentsRequest paymentsRequest = createPaymentsCheckoutRequest();
-        paymentsRequest.setPaymentMethod(defaultPaymentMethodDetails);
+        paymentsRequest.setPaymentMethod(sepaDirectDebitDetails);
 
         String jsonRequest = PRETTY_PRINT_GSON.toJson(paymentsRequest);
 
@@ -333,9 +333,9 @@ public class CheckoutTest extends BaseTest {
                 + "  },\n"
                 + "  \"merchantAccount\": \"MagentoMerchantTest\",\n"
                 + "  \"paymentMethod\": {\n"
-                + "    \"type\": \"sepadirectdebit\",\n"
-                + "    \"sepa.ownerName\": \"A. Schneider\",\n"
-                + "    \"sepa.ibanNumber\": \"DE87123456781234567890\"\n"
+                + "    \"iban\": \"DE87123456781234567890\",\n"
+                + "    \"ownerName\": \"A. Schneider\",\n"
+                + "    \"type\": \"sepadirectdebit\"\n"
                 + "  },\n"
                 + "  \"reference\": \"Your order number\",\n"
                 + "  \"returnUrl\": \"https://your-company.com/...\",\n"
