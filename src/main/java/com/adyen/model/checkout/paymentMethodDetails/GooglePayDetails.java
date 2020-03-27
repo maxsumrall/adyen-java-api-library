@@ -35,7 +35,7 @@ import java.util.Objects;
  */
 
 public class GooglePayDetails extends GenericPaymentMethodDetails {
-    
+
     /**
      * Gets or Sets fundingSource
      */

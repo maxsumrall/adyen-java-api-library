@@ -45,11 +45,11 @@ public class AchDetails extends GenericPaymentMethodDetails {
 
     @SerializedName("ownerName")
     private String ownerName = null;
-    
+
     public AchDetails() {
         this.type = "ach";
     }
-    
+
     /**
      * The bank account number (without separators).
      *

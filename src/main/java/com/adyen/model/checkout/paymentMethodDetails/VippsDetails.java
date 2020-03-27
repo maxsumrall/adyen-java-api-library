@@ -30,12 +30,12 @@ import java.util.Objects;
  */
 
 public class VippsDetails extends GenericPaymentMethodDetails {
-    
+
     @SerializedName("telephoneNumber")
     private String telephoneNumber = null;
 
     public VippsDetails() {
-        this.type =  "vipps";
+        this.type = "vipps";
     }
 
     public VippsDetails telephoneNumber(String telephoneNumber) {

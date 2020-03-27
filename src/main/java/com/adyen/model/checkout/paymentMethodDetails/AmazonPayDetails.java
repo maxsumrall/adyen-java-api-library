@@ -105,7 +105,7 @@ public class AmazonPayDetails extends GenericPaymentMethodDetails {
     public void setAmazonPayToken(String amazonPayToken) {
         this.amazonPayToken = amazonPayToken;
     }
-    
+
 
     /**
      * Get fundingSource
@@ -119,7 +119,7 @@ public class AmazonPayDetails extends GenericPaymentMethodDetails {
     public void setFundingSource(FundingSourceEnum fundingSource) {
         this.fundingSource = fundingSource;
     }
-    
+
 
     /**
      * Get type

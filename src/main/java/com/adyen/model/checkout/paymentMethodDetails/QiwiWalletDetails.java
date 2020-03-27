@@ -30,7 +30,6 @@ import java.util.Objects;
  */
 
 public class QiwiWalletDetails extends GenericIssuerPaymentMethodDetails {
-    
     @SerializedName("telephoneNumber")
     private String telephoneNumber = null;
 

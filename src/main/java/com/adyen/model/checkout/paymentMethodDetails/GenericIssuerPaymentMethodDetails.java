@@ -24,9 +24,15 @@ public class GenericIssuerPaymentMethodDetails extends GenericPaymentMethodDetai
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof GenericIssuerPaymentMethodDetails)) return false;
-        if (!super.equals(o)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenericIssuerPaymentMethodDetails)) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
         GenericIssuerPaymentMethodDetails that = (GenericIssuerPaymentMethodDetails) o;
         return getIssuer().equals(that.getIssuer());
     }

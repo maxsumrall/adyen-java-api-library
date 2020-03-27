@@ -35,7 +35,7 @@ import java.util.Objects;
  */
 
 public class SamsungPayDetails extends GenericPaymentMethodDetails {
-    
+
     /**
      * Gets or Sets fundingSource
      */

@@ -39,9 +39,8 @@ import static com.adyen.constants.ApiConstants.PaymentMethodType.TYPE_SCHEME;
  */
 
 public class CardDetails extends GenericPaymentMethodDetails {
-
-    @SerializedName("MD")
-    private String MD = null;
+    @SerializedName("md")
+    private String md = null;
 
     @SerializedName("PaRes")
     private String paRes = null;
@@ -163,8 +162,8 @@ public class CardDetails extends GenericPaymentMethodDetails {
         this.type = TYPE_SCHEME;
     }
 
-    public CardDetails MD(String MD) {
-        this.MD = MD;
+    public CardDetails md(String md) {
+        this.md = md;
         return this;
     }
 
@@ -173,12 +172,12 @@ public class CardDetails extends GenericPaymentMethodDetails {
      *
      * @return MD
      **/
-    public String getMD() {
-        return MD;
+    public String getMd() {
+        return md;
     }
 
-    public void setMD(String MD) {
-        this.MD = MD;
+    public void setMd(String md) {
+        this.md = md;
     }
 
     public CardDetails paRes(String paRes) {
@@ -609,7 +608,7 @@ public class CardDetails extends GenericPaymentMethodDetails {
             return false;
         }
         CardDetails cardDetails = (CardDetails) o;
-        return Objects.equals(this.MD, cardDetails.MD) &&
+        return Objects.equals(this.md, cardDetails.md) &&
                 Objects.equals(this.paRes, cardDetails.paRes) &&
                 Objects.equals(this.billingAddress, cardDetails.billingAddress) &&
                 Objects.equals(this.brand, cardDetails.brand) &&
@@ -638,7 +637,7 @@ public class CardDetails extends GenericPaymentMethodDetails {
 
     @Override
     public int hashCode() {
-        return Objects.hash(MD, paRes, billingAddress, brand, browserInfo, cardDetailsCvc, cupsecureplusSmscode, cvc, encryptedCardNumber, encryptedExpiryMonth, encryptedExpiryYear, encryptedSecurityCode, expiryMonth, expiryYear, fundingSource, holderName, installments, issuer, networkPaymentReference, number, returnUrlQueryString, telephoneNumber, threeds2ChallengeResult, threeds2Fingerprint, type);
+        return Objects.hash(md, paRes, billingAddress, brand, browserInfo, cardDetailsCvc, cupsecureplusSmscode, cvc, encryptedCardNumber, encryptedExpiryMonth, encryptedExpiryYear, encryptedSecurityCode, expiryMonth, expiryYear, fundingSource, holderName, installments, issuer, networkPaymentReference, number, returnUrlQueryString, telephoneNumber, threeds2ChallengeResult, threeds2Fingerprint, type);
     }
 
 
@@ -647,7 +646,7 @@ public class CardDetails extends GenericPaymentMethodDetails {
         StringBuilder sb = new StringBuilder();
         sb.append("class CardDetails {\n");
 
-        sb.append("    MD: ").append(toIndentedString(MD)).append("\n");
+        sb.append("    md: ").append(toIndentedString(md)).append("\n");
         sb.append("    paRes: ").append(toIndentedString(paRes)).append("\n");
         sb.append("    billingAddress: ").append(toIndentedString(billingAddress)).append("\n");
         sb.append("    brand: ").append(toIndentedString(brand)).append("\n");

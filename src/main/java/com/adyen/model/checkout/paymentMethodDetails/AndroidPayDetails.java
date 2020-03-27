@@ -35,7 +35,7 @@ import java.util.Objects;
  */
 
 public class AndroidPayDetails extends GenericPaymentMethodDetails {
-    
+
     @SerializedName("androidPayToken")
     private String androidPayToken = null;
 

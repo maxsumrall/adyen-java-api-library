@@ -41,8 +41,12 @@ public class GenericPaymentMethodDetails implements PaymentMethodDetails {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof GenericPaymentMethodDetails)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof GenericPaymentMethodDetails)) {
+            return false;
+        }
         GenericPaymentMethodDetails that = (GenericPaymentMethodDetails) o;
         return getType().equals(that.getType());
     }

@@ -35,7 +35,7 @@ import java.util.Objects;
  */
 
 public class ApplePayDetails extends GenericPaymentMethodDetails {
-    
+
     @SerializedName("applePayToken")
     private String applePayToken = null;
 
